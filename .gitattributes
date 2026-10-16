@@ -1,0 +1,8 @@
+* text=auto eol=lf
+# Hash-bound JSON evidence and original assets must survive checkout byte-for-byte.
+*.json -text
+skills/**/assets/** -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary

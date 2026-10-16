@@ -24,7 +24,7 @@
           "美妆个护"
         ]
       },
-      "sha256": "fca7f0fdfee8620da7e009963095d289a5fca5b8155116c77f1cc5f218bde8d0"
+      "sha256": "1d28e9a1f14c66d51fb7466b6a25d1fe6b300d772ba9f219c02902855c8d7a2a"
     },
     {
       "id": "cable-spatial",
@@ -53,7 +53,7 @@
           "electronics"
         ]
       },
-      "sha256": "95e2d03beee43f89ac25b31a28ecb0d236b2b6956460566a4e7714dcc84e5ffe"
+      "sha256": "54d28c58c69a8368f0c226774b677c18a8d4eea34c455eddd0e1b3ac382d2aa7"
     },
     {
       "id": "cleaning-precision-clean",
@@ -78,7 +78,7 @@
           "清洁家电"
         ]
       },
-      "sha256": "a5a84a8ae41a5c497b085831c09228e4276642124fc04dd1e719b1d1f4240511"
+      "sha256": "105ddf1e68be226241b8dd9f142f9d13b16fc0585b4f52895987ab29457fd776"
     },
     {
       "id": "cooking-kinetic-spatial",
@@ -105,7 +105,7 @@
           "small-appliance"
         ]
       },
-      "sha256": "ec03b5e4b0faa0672984c7cc31df8509c71d00123c9de757bb6823df5d6a9846"
+      "sha256": "a836c8edcde4a2aafbb6c689dacf59b4f65f13df739fc276733fc24587a01e15"
     },
     {
       "id": "electronics-outdoor-rhythmic",
@@ -130,7 +130,7 @@
           "电子数码"
         ]
       },
-      "sha256": "11f98924db8c72807cb78494d7d94f5e627d14b73fa032d571c57a585aa6568c"
+      "sha256": "6444759dabb2d4186469aaa48b65699ccb585ceabeccb68f925e336f60b8ace9"
     },
     {
       "id": "fashion-soft-editorial",
@@ -155,7 +155,7 @@
           "服饰箱包"
         ]
       },
-      "sha256": "4107b75e057efaa3d08df3471a0ac377269f9df847b4d3e50a175aabd46fc279"
+      "sha256": "334d91d4bbf8ba6cee297bc1821f3e07e386270f702be25d9691cb087fde9063"
     },
     {
       "id": "food-crisp-pop",
@@ -180,7 +180,7 @@
           "食品饮料"
         ]
       },
-      "sha256": "cc033e8373ba45e33a2145283347ed3abec4ec367f65382a75d35f0772a96c70"
+      "sha256": "87c78938049265f05b23493438ab43d42d4f1264bdd5ba9a52a7e84bd8ff8d6d"
     },
     {
       "id": "furniture-sculptural-home",
@@ -205,7 +205,7 @@
           "家具家居"
         ]
       },
-      "sha256": "c73b9c9ecb47f426447ac61257ed4caef229dffd7464e06d407ed20dba83289b"
+      "sha256": "d1b3965549b9b6db95e7a0d7b8d191ab8e912675c3d54552a86d3fd9a5310678"
     },
     {
       "id": "garden-botanical-precision",
@@ -230,7 +230,7 @@
           "户外园艺"
         ]
       },
-      "sha256": "7a8323400047bdf021bfe44556f92c57d97da05003b8a8eab404b26e6039b316"
+      "sha256": "a9c27a8d464c790edf1ffc7a0240483a61d998b05a09154877dd851c7d0576b6"
     },
     {
       "id": "kitchen-fresh-kinetic",
@@ -255,7 +255,7 @@
           "厨房厨具"
         ]
       },
-      "sha256": "55609244076bf39015b298870174f6bbf15a10a69418713467f71246b6830977"
+      "sha256": "4c2bd853c148fba6b07c08edf9a53b619ec53f065da2b6dd69bd6e2144d2d278"
     },
     {
       "id": "pet-gentle-fluid",
@@ -280,7 +280,7 @@
           "宠物用品"
         ]
       },
-      "sha256": "0a3c29a1a0feda9d0883064d5ae1ea9e8ddb2b7906ebebb88cce5255e36e2fcf"
+      "sha256": "14735dcb818aebc7cfc2d75e0bc64a2fab2c7d7c40094047c4512327674d227d"
     },
     {
       "id": "sports-grounded-movement",
@@ -305,7 +305,7 @@
           "运动健身"
         ]
       },
-      "sha256": "184a42d6657a7c6b320fb47019b761803ddd7b89499c59d670cdcc4f2eb36e43"
+      "sha256": "2fd4e3356be87a8d218587960b505aef3f7cf19c8d1caeb4f291bf47ffbb6a4a"
     },
     {
       "id": "steamer-tactile",
@@ -335,7 +335,7 @@
           "small-appliance"
         ]
       },
-      "sha256": "4dd557fd798bef81d90fc054fe10b5d7a92a4bc11f37b3cde6620a61e2a2115e"
+      "sha256": "09ce9a7cb4d0ab9976e4b0efc4e9506c1080bac5eabb68b34ba6d247a2f46264"
     },
     {
       "id": "tools-industrial-axis",
@@ -360,7 +360,7 @@
           "工具家装"
         ]
       },
-      "sha256": "0fa0ebe23520aa269453286efd264f08e09b7d1205b133e04b709c614b415388"
+      "sha256": "47853ace9a328385ef0654369f55f37554752896cafc293caf9a7017a2b77cfe"
     },
     {
       "id": "toys-playful-geometric",
@@ -385,7 +385,7 @@
           "玩具母婴"
         ]
       },
-      "sha256": "0688c674bab5d342414cb0d976a600ef4947c0f4ee96d4e79b7d0189077af0ad"
+      "sha256": "5e07bf495f6963a3e6f279dc9548fb8e7b05d7dca2b88e929b0e8616b584310b"
     }
   ]
 }
