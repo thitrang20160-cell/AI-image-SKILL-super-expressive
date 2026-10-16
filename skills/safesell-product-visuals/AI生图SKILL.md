@@ -3,7 +3,7 @@ name: safesell-product-visuals
 description: Art-direct reusable commercial product images across categories and image types, including hero, feature, material, use-scene and campaign sets with product-led spatial typography and interaction effects. Use for SafeSellAI product imagery, reference-led refinement and verified-render composition; excludes ordinary UI design and unsupported engineering reconstruction.
 ---
 
-# 塞星商品视觉导演
+# AI生图SKILL-超强表现力
 
 状态：v1.11，智能 Listing 套图默认 7 张，顺序为主图 1、功能卖点 2、材质 1、使用场景 2、尺寸 1。新增实际参考图/参数预检、分图型风格对照、哈希绑定审核与定向返修，并接入本地交付检查。保留材质张力、动作场景、空间文字、主图分支、12 个视觉家族及原有检查—候选处理—复检；未执行或未知不当作通过，单图验证不覆盖整批。
 

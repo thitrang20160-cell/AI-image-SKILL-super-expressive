@@ -1,6 +1,6 @@
 interface:
 
-  display_name: "塞星商品视觉导演"
+  display_name: "AI生图SKILL-超强表现力"
 
   short_description: "跨类目制作商品主图、场景和广告套图，控制空间文字、材质与交互动势"
   default_prompt: "使用 $safesell-product-visuals 根据当前商品、图片用途与参考风格制作高质量套图，让文字跟随商品与作用位置，保持结构、材质和参数有据，并逐张审核。"

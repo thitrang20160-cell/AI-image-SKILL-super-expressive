@@ -1,4 +1,4 @@
-# SafeSellAI 商品精铺技能与视觉基础设施
+# AI生图SKILL-超强表现力
 
 可公开下载、按需读取的两个技能：商品视觉制作与速卖通到沃尔玛的选品/Listing/审核/上架编排。包含 **52 张原始参考图片、15 张视觉配方卡、运行检查脚本、可自部署图床、安装器、运行配置模板和跨平台CI**。
 
@@ -9,8 +9,8 @@
 需要 Python 3.12。先克隆，再安装依赖与技能：
 
 ```text
-git clone https://github.com/thitrang20160-cell/safesellai-product-listing-skills.git
-cd safesellai-product-listing-skills
+git clone https://github.com/thitrang20160-cell/AI-image-SKILL-super-expressive.git
+cd AI-image-SKILL-super-expressive
 python -m pip install -r requirements.txt
 python scripts/doctor.py
 python scripts/install_skills.py --target <你的技能目录>

@@ -3,7 +3,7 @@ name: safesell-product-visuals
 description: Direct and refine SafeSellAI product images with source fidelity, reference-bound style, spatial typography, executable input/review gates and evidence-bound postprocessing. Use for commercial listing sets, style drift repairs and requested watermark workflows; not ordinary UI design or unsupported engineering reconstruction.
 ---
 
-# 塞星商品视觉导演
+# AI生图SKILL-超强表现力
 
 主流程和视觉分支在 [AI生图SKILL.md](AI生图SKILL.md)，制作前读取；保留现有外部调用路径。
 
