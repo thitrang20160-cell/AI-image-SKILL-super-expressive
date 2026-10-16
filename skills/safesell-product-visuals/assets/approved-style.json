@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "approved_on": "2026-10-08",
+  "user_statement": "到位，形成SKILL 要能复用到不同类目 不同类型图片。",
+  "file": "assets/approved-spatial-type-v3.png",
+  "role": "user-approved-visual-style",
+  "approved_scope": [
+    "product-led spatial typography",
+    "near/middle/far hierarchy",
+    "copy orientation derived from product axis and scene",
+    "parameter located at functional interaction",
+    "localized directional effect at interaction point"
+  ],
+  "not_verified": [
+    "exact SKU geometry",
+    "microcontacts",
+    "cross-image proportion consistency",
+    "measured performance"
+  ],
+  "transfer_to_other_categories": "Relationships only; choose category-appropriate action, materials, type and graphic effects.",
+  "do_not_transfer": [
+    "cable identity",
+    "480 Mbps",
+    "USB-A/USB-C",
+    "blue light by default",
+    "connector-specific pose",
+    "this image's Powertek branding"
+  ],
+  "origin": {
+    "tool": "built-in image_gen",
+    "project": "liquipel-cable/v3",
+    "status": "style-approved; product-needs-review"
+  },
+  "comparison_reference": "assets/sample-09.jpg"
+}

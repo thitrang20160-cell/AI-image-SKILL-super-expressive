@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "sports-grounded-movement",
+  "version": 1,
+  "title": "运动健身：卷曲到铺开的连续柔性材质动作",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "flexible-sheet"
+    ],
+    "purposes": [
+      "material"
+    ],
+    "styles": [
+      "grounded-movement"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "运动健身"
+    ]
+  },
+  "transfer": [
+    "材料连续弯曲而非夸张截面",
+    "圆卷与展开平面形成近远尺度"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "material",
+      "actions": [
+        "unroll"
+      ],
+      "intent": "卷曲到铺开的连续柔性材质动作",
+      "prompt_template": "{current_flexible_sheet} 从近景卷曲端连续展开到地面，{headline} 被卷端遮挡，{local_copy} 顺材料边缘；纹理尺度与当前来源匹配，不造内部层或厚度测试。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "single-sku-scope"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "single-sku-scope",
+      "observed": "One actual SKU and one image purpose reviewed in this round. No cross-product precision evidence.",
+      "repair": "Recheck source and independent-review next SKU; do not inherit brand, color, numeric claims or geometry.",
+      "resolution": "scope-limited; not a visual failure"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/sports-grounded-movement/v1/anchor-0.png",
+      "sha256": "dc7655fe13f3380075f8a9a2967771eae6f402886e85b6e83f28d082481a7d88",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/sports-grounded-movement/v1/anchor-1.jpg",
+      "sha256": "f67c1d627724c9fe897b55d2bb824a7ccfe1e6b964f3c887e61b76c51382a033",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "685169867"
+    ],
+    "source": "https://www.walmart.com/ip/685169867",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 1,
+    "revision_calls": 0,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

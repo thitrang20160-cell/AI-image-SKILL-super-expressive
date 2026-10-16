@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "garden-botanical-precision",
+  "version": 1,
+  "title": "户外园艺：软握柄、精密枢轴与刃面材质对比",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "hinged-cutting-tool"
+    ],
+    "purposes": [
+      "material"
+    ],
+    "styles": [
+      "botanical-precision"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "户外园艺"
+    ]
+  },
+  "transfer": [
+    "宏观剪体与局部握柄材质并置",
+    "斜向刀轴决定大字交叉与副字方向"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "material",
+      "actions": [
+        "display"
+      ],
+      "intent": "软握柄、精密枢轴与刃面材质对比",
+      "prompt_template": "{current_hinged_tool} 保持可见开合状态与零件关系，{material_detail} 位于近景，{headline} 后层被刀口/枢轴遮挡；{local_copy} 顺握柄轴线，硬刃/软握柄用掠光区分，不伪造切割或耐用测试。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "single-sku-scope"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "single-sku-scope",
+      "observed": "One actual SKU and one image purpose reviewed in this round. No cross-product precision evidence.",
+      "repair": "Recheck source and independent-review next SKU; do not inherit brand, color, numeric claims or geometry.",
+      "resolution": "scope-limited; not a visual failure"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/garden-botanical-precision/v1/anchor-0.png",
+      "sha256": "1d8aa9a03a2e6e14148afb43da0ef1a217c55e2233eab8595d30e4a213fa14cd",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/garden-botanical-precision/v1/anchor-1.jpg",
+      "sha256": "0fbae6fd6e98115a936a788e2c80c2bf4cdf3ae6098e2e6be6fd5e7662592431",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "19864126"
+    ],
+    "source": "https://www.walmart.com/ip/19864126",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 1,
+    "revision_calls": 0,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

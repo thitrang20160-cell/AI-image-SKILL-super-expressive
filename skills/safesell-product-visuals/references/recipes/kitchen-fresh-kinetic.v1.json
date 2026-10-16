@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "id": "kitchen-fresh-kinetic",
+  "version": 1,
+  "title": "厨房厨具：按压触点、旋转轴和透明容器层次",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "transparent-bowl-pump"
+    ],
+    "purposes": [
+      "operation"
+    ],
+    "styles": [
+      "fresh-kinetic"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "厨房厨具"
+    ]
+  },
+  "transfer": [
+    "手掌只参与真实泵顶按压",
+    "圆形动作决定短弧和字向，蔬菜为内容物"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "operation",
+      "actions": [
+        "press-pump"
+      ],
+      "intent": "按压触点、旋转轴和透明容器层次",
+      "prompt_template": "{current_pump_product} 的 {verified_cap} 被单手按压，{transparent_body} 展示 {contents}；{headline} 位于产品后层，{local_copy} 顺顶面切线；用少量短弧表现旋转广告意图，不造性能数字。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "spatial_type",
+        "effects"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "spatial_type",
+      "observed": "局部指令顺盖沿弯曲，但 SPIN 仅被手和泵帽遮挡，没有 brief 指定的碗沿遮挡关系。",
+      "repair": "重排碗沿周围的旋转示意，使两条短弧指向同一环向，并让 SPIN 下缘与碗沿轻微遮挡；保留当前真实泵帽接触和商品结构。",
+      "resolution": "later reviewed pass; see bound records",
+      "review": "D:\\CODEX\\saixing-erp-ui-demo\\output\\imagegen\\category-regression-v1\\02-kitchen\\review-v1.json"
+    },
+    {
+      "tag": "effects",
+      "observed": "两条短弧位于碗沿外侧，但左弧指向左下、右弧指向右下，围绕同一泵轴形成相反环向。",
+      "repair": "重排碗沿周围的旋转示意，使两条短弧指向同一环向，并让 SPIN 下缘与碗沿轻微遮挡；保留当前真实泵帽接触和商品结构。",
+      "resolution": "later reviewed pass; see bound records",
+      "review": "D:\\CODEX\\saixing-erp-ui-demo\\output\\imagegen\\category-regression-v1\\02-kitchen\\review-v1.json"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/kitchen-fresh-kinetic/v1/anchor-0.png",
+      "sha256": "b4005008f6a61a67638e81124454fa1c889e028a72951ef295a669230c5832d7",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/kitchen-fresh-kinetic/v1/anchor-1.jpg",
+      "sha256": "0a3bf6638f9d17ca87db8d54bb43b5d926cb789e555f731232fbce4050356b69",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "32958517"
+    ],
+    "source": "https://www.walmart.com/ip/32958517",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 2,
+    "revision_calls": 1,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output_root": "./work",
+  "image_host": {
+    "base_url": "https://images.example.com",
+    "upload_token_environment": "SAFESELL_IMAGE_HOST_TOKEN",
+    "contract": "infrastructure/image-host/server.py"
+  },
+  "generation": {
+    "preferred_tool": "built-in image_gen when available",
+    "other_clients": "Provide your own explicitly selected image tool and adapt its real argument schema. The bundled preflight validates the built-in local-reference contract."
+  },
+  "safesellai": {
+    "base_url_environment": "SAFESELL_API_URL",
+    "credential_environment": "SAFESELL_API_TOKEN",
+    "adapter": "Operator-supplied authorized account/API; no production service or access credentials bundled"
+  },
+  "walmart": {
+    "market": "US",
+    "client_id_environment": "WM_CLIENT_ID",
+    "client_secret_environment": "WM_CLIENT_SECRET",
+    "store_id": null,
+    "ship_node": null,
+    "inventory_target": 0,
+    "adapter": "Operator-supplied official API or connected seller application; publishing requires explicit task authorization"
+  },
+  "watermarks": {
+    "optional_model_manifest": "config/trustmark-models.json",
+    "cloud_checks": "explicitly selected only; unavailable checks stay unknown"
+  }
+}

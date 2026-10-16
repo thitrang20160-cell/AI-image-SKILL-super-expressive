@@ -1,0 +1,18 @@
+{
+  "example_id": "ice-scraper-typography",
+  "purpose": "feature",
+  "source_url": "https://www.aliexpress.com/item/1005007987597887.html",
+  "identity": "Black manual scraper, steel/plastic, selected source pack two; action illustration uses one tool",
+  "exact_copy": [
+    "FROST",
+    "OFF",
+    "MANUAL ICE SCRAPER"
+  ],
+  "v1": "User rejected overall set tension; retained as negative reference",
+  "v2": "Style closer, headline final character occluded; not released",
+  "v3": "Targeted headline-position/scale repair; creator self-check only",
+  "user_style_approval_for_v3": null,
+  "commercial_release": false,
+  "cross_sku_stability_verified": false,
+  "private_business_records_included": false
+}

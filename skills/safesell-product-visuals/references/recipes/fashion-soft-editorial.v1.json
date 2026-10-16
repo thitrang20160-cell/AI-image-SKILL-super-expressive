@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "fashion-soft-editorial",
+  "version": 1,
+  "title": "服饰箱包：提带受力与轻软布面垂坠",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "flexible-container"
+    ],
+    "purposes": [
+      "use-scene"
+    ],
+    "styles": [
+      "soft-editorial"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "服饰箱包"
+    ]
+  },
+  "transfer": [
+    "手掌提拿只占次要区域",
+    "布面受力褶线决定字向与尺度"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "use-scene",
+      "actions": [
+        "carry"
+      ],
+      "intent": "提带受力与轻软布面垂坠",
+      "prompt_template": "单手以真实抓握提起 {current_soft_bag} 的 {verified_handles}，{fabric} 自然垂坠；{headline} 被带和包口遮挡，副字顺受力折线。保留开口、缝线与 logo，不加未确认口袋、拉链或承重。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "single-sku-scope"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "single-sku-scope",
+      "observed": "One actual SKU and one image purpose reviewed in this round. No cross-product precision evidence.",
+      "repair": "Recheck source and independent-review next SKU; do not inherit brand, color, numeric claims or geometry.",
+      "resolution": "scope-limited; not a visual failure"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/fashion-soft-editorial/v1/anchor-0.png",
+      "sha256": "50bce4292ed9ded7fbcbed85665f63fb6179afe21f71279febedaca62b334ea5",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/fashion-soft-editorial/v1/anchor-1.jpg",
+      "sha256": "d2ef4efe85c9109c349be9c384a2c9a9714e0ec54edc89949e06365d1bd659c4",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "17472857032"
+    ],
+    "source": "https://www.walmart.com/ip/17472857032",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 1,
+    "revision_calls": 0,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

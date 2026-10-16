@@ -1,0 +1,77 @@
+{
+  "profile": "Portable example AliExpress US / Walmart listing policy",
+  "applicability": "Example only; each operator supplies their own account, brand, shipping and pricing evidence.",
+  "outputRoot": "./work",
+  "destinationCountry": "US",
+  "currency": "USD",
+  "selectionTarget": 250,
+  "creativePilotCount": 10,
+  "selectionPolicy": {
+    "updatedDate": "2026-10-14",
+    "sequence": [
+      "target-market-traffic",
+      "sustainable-profit-and-competitors",
+      "listing",
+      "images",
+      "consistency-review",
+      "authorized-publishing",
+      "official-readback"
+    ],
+    "appliesTo": "New selections and new creative production; preserve completed prior work",
+    "prioritize": [
+      "winter",
+      "Christmas"
+    ],
+    "markupUsd": 15,
+    "markupConfirmedByUser": true,
+    "markupBasis": "Repeatable procurement landed cost to US plus 15 USD sets retail price; platform and other selling costs are then deducted. Confirmed 2026-10-14.",
+    "pricingStrategy": {
+      "updatedDate": "2026-10-14",
+      "method": "Adaptive cost / comparable competition / modeled demand pricing",
+      "legacyMarkupRole": "15 USD markup retained as comparison, superseded as universal pricing standard by the subsequent request for a pricing curve",
+      "optimizationObjective": "Expected total variable contribution within profit floor and comparable market cap",
+      "demandCalibrationStatus": "No real price-conversion data fitted; model launch prices only",
+      "illustrativeParameters": {
+        "beta": 3,
+        "competitionFactor": 0.95,
+        "minimumUnitProfitUsd": 5,
+        "minimumMargin": 0.2,
+        "stressCostRate": 0.2
+      },
+      "illustrativeParametersStatus": "Analyst proposals, not confirmed user goals or empirical estimates",
+      "automaticallyRepriceExistingItems": false
+    },
+    "firstOrderPriceMayReplaceRepeatableCost": false,
+    "minimumUnitContributionUsd": null,
+    "minimumMargin": null,
+    "minimumTargetsStatus": "Not specified by user; any suggested 5 USD / 20 percent threshold is an analyst proposal"
+  },
+  "variantPolicy": "First verified default variant, then lock explicitly across reloads",
+  "pricePolicy": {
+    "preferredPromoItemPriceUsd": 0.99,
+    "freeShippingPromoMinUsd": 1,
+    "freeShippingPromoMaxUsd": 3.99,
+    "normalFreeShippingMinUsd": 4,
+    "normalFreeShippingMaxUsd": 30,
+    "normalPaidShippingLandedMinUsd": 4,
+    "normalPaidShippingLandedMaxUsd": 50,
+    "newCustomerPriceAccepted": true,
+    "eligibilityAndPurchaseLimitsMustBeRecorded": true
+  },
+  "imageRoles": [
+    "master",
+    "feature-1",
+    "feature-2",
+    "material",
+    "scene-1",
+    "scene-2",
+    "dimensions"
+  ],
+  "visualDirection": "Strong product-led tension, physical action and spatial typography, preserving the selected SKU",
+  "storeId": null,
+  "brand": null,
+  "manufacturer": null,
+  "retailPrices": null,
+  "inventoryTargetForThisProject": 0,
+  "automaticContinuation": "Only when requested; this batch was left for manual continuation"
+}

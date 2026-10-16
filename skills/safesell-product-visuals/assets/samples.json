@@ -1,0 +1,94 @@
+{
+  "provided_on": "2026-10-08",
+  "role": "visual-style-reference-only",
+  "items": [
+    {
+      "id": "sample-01",
+      "file": "assets/sample-01.jpg",
+      "width": 1280,
+      "height": 1715,
+      "mode": "RGB",
+      "sha256": "c47c93f7e94ba34ae0ccd10964093344f04e6c55b76657ac0d66163155cda918"
+    },
+    {
+      "id": "sample-02",
+      "file": "assets/sample-02.jpg",
+      "width": 1280,
+      "height": 1715,
+      "mode": "RGB",
+      "sha256": "9441b56cb5d16dd1b01fc870f8922c0c69944138050b791c827c1265a0ba6a91"
+    },
+    {
+      "id": "sample-03",
+      "file": "assets/sample-03.jpg",
+      "width": 1080,
+      "height": 1441,
+      "mode": "RGB",
+      "sha256": "63654adb9c3ec9cc87c650c22f1a9aa3855d35f27e108f7e67cc118a4e30ecee"
+    },
+    {
+      "id": "sample-04",
+      "file": "assets/sample-04.jpg",
+      "width": 1708,
+      "height": 1280,
+      "mode": "RGB",
+      "sha256": "b34ac06cd3b15360571aca4215982c9ff26d57ec714e9c7cae6c4f4f4fdaff76"
+    },
+    {
+      "id": "sample-05",
+      "file": "assets/sample-05.jpg",
+      "width": 1080,
+      "height": 1440,
+      "mode": "RGB",
+      "sha256": "892fedc432c1417b61be8e3f56d564f6b2b8d61da2c979fa741ccb6f500b1545"
+    },
+    {
+      "id": "sample-06",
+      "file": "assets/sample-06.jpg",
+      "width": 1080,
+      "height": 1446,
+      "mode": "RGB",
+      "sha256": "add034ced548d46facaf9aaad3ddb6244d60b954e72737fe5c95763e75722f5c"
+    },
+    {
+      "id": "sample-07",
+      "file": "assets/sample-07.jpg",
+      "width": 1080,
+      "height": 1446,
+      "mode": "RGB",
+      "sha256": "371ae9d52b0eb31caec0067cbbe9532a02f1022eecc79a51d579abd19af7a1f1"
+    },
+    {
+      "id": "sample-08",
+      "file": "assets/sample-08.jpg",
+      "width": 1080,
+      "height": 1446,
+      "mode": "RGB",
+      "sha256": "d2d560578abbc356f0cdcf059885aab966cf07991dd74c23f99871f34c788595"
+    },
+    {
+      "id": "sample-09",
+      "file": "assets/sample-09.jpg",
+      "width": 1080,
+      "height": 1440,
+      "mode": "RGB",
+      "sha256": "8fe160e3635e6f14a34feebe2db15220ea2d915f4da4d104bc83764c6bd03597"
+    },
+    {
+      "id": "sample-10",
+      "file": "assets/sample-10.jpg",
+      "width": 1080,
+      "height": 1446,
+      "mode": "RGB",
+      "sha256": "ee8cdb4094f1bf683410abf145d5b9113af840712a2b6decfba3290dc2687142"
+    },
+    {
+      "id": "sample-11",
+      "file": "assets/sample-11.jpg",
+      "width": 1080,
+      "height": 1446,
+      "mode": "RGB",
+      "sha256": "a5073990862c53cac107229d4179ab3b9ade915f720ec1916a30f53fc89e21ff"
+    }
+  ]
+}

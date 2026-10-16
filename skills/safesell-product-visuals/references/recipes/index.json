@@ -1,0 +1,391 @@
+{
+  "schema_version": 1,
+  "recipes": [
+    {
+      "id": "beauty-sensory-cream",
+      "version": 1,
+      "title": "美妆个护：柔和瓶体、细腻布料与触感语言",
+      "status": "reference-library",
+      "file": "references/recipes/beauty-sensory-cream.v1.json",
+      "profile": {
+        "morphologies": [
+          "flip-cap-bottle"
+        ],
+        "purposes": [
+          "campaign"
+        ],
+        "styles": [
+          "sensory-cream"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "美妆个护"
+        ]
+      },
+      "sha256": "fca7f0fdfee8620da7e009963095d289a5fca5b8155116c77f1cc5f218bde8d0"
+    },
+    {
+      "id": "cable-spatial",
+      "version": 1,
+      "title": "柔性线材：空间文字、作用点与弯曲材质",
+      "status": "user-style-approved",
+      "file": "references/recipes/cable-spatial.v1.json",
+      "profile": {
+        "morphologies": [
+          "flexible-linear"
+        ],
+        "purposes": [
+          "hero",
+          "feature",
+          "material",
+          "operation",
+          "use-scene"
+        ],
+        "styles": [
+          "technical-studio"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "electronics"
+        ]
+      },
+      "sha256": "95e2d03beee43f89ac25b31a28ecb0d236b2b6956460566a4e7714dcc84e5ffe"
+    },
+    {
+      "id": "cleaning-precision-clean",
+      "version": 1,
+      "title": "清洁家电：细长硬壳与精确秩序的张力",
+      "status": "reference-library",
+      "file": "references/recipes/cleaning-precision-clean.v1.json",
+      "profile": {
+        "morphologies": [
+          "handheld-contact-appliance"
+        ],
+        "purposes": [
+          "hero"
+        ],
+        "styles": [
+          "precision-clean"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "清洁家电"
+        ]
+      },
+      "sha256": "a5a84a8ae41a5c497b085831c09228e4276642124fc04dd1e719b1d1f4240511"
+    },
+    {
+      "id": "cooking-kinetic-spatial",
+      "version": 1,
+      "title": "烹饪场景：动作弧线、近景冲出与空间文字",
+      "status": "user-style-approved",
+      "file": "references/recipes/cooking-kinetic-spatial.v1.json",
+      "profile": {
+        "morphologies": [
+          "countertop-coil-hotplate"
+        ],
+        "purposes": [
+          "use-scene",
+          "campaign"
+        ],
+        "styles": [
+          "fresh-kinetic-spatial"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "厨房厨具",
+          "small-appliance"
+        ]
+      },
+      "sha256": "ec03b5e4b0faa0672984c7cc31df8509c71d00123c9de757bb6823df5d6a9846"
+    },
+    {
+      "id": "electronics-outdoor-rhythmic",
+      "version": 1,
+      "title": "电子数码：扣环轮廓、织物微纹与便携体积",
+      "status": "reference-library",
+      "file": "references/recipes/electronics-outdoor-rhythmic.v1.json",
+      "profile": {
+        "morphologies": [
+          "rigid-clip-device"
+        ],
+        "purposes": [
+          "feature"
+        ],
+        "styles": [
+          "outdoor-rhythmic"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "电子数码"
+        ]
+      },
+      "sha256": "11f98924db8c72807cb78494d7d94f5e627d14b73fa032d571c57a585aa6568c"
+    },
+    {
+      "id": "fashion-soft-editorial",
+      "version": 1,
+      "title": "服饰箱包：提带受力与轻软布面垂坠",
+      "status": "reference-library",
+      "file": "references/recipes/fashion-soft-editorial.v1.json",
+      "profile": {
+        "morphologies": [
+          "flexible-container"
+        ],
+        "purposes": [
+          "use-scene"
+        ],
+        "styles": [
+          "soft-editorial"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "服饰箱包"
+        ]
+      },
+      "sha256": "4107b75e057efaa3d08df3471a0ac377269f9df847b4d3e50a175aabd46fc279"
+    },
+    {
+      "id": "food-crisp-pop",
+      "version": 1,
+      "title": "食品饮料：弧形薯片、脆薄边缘与包装红的节奏",
+      "status": "reference-library",
+      "file": "references/recipes/food-crisp-pop.v1.json",
+      "profile": {
+        "morphologies": [
+          "packaged-food-cylinder"
+        ],
+        "purposes": [
+          "campaign"
+        ],
+        "styles": [
+          "crisp-pop"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "食品饮料"
+        ]
+      },
+      "sha256": "cc033e8373ba45e33a2145283347ed3abec4ec367f65382a75d35f0772a96c70"
+    },
+    {
+      "id": "furniture-sculptural-home",
+      "version": 1,
+      "title": "家具家居：曲面轮廓与建筑式字物遮挡",
+      "status": "reference-library",
+      "file": "references/recipes/furniture-sculptural-home.v1.json",
+      "profile": {
+        "morphologies": [
+          "rigid-pedestal"
+        ],
+        "purposes": [
+          "campaign"
+        ],
+        "styles": [
+          "sculptural-home"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "家具家居"
+        ]
+      },
+      "sha256": "c73b9c9ecb47f426447ac61257ed4caef229dffd7464e06d407ed20dba83289b"
+    },
+    {
+      "id": "garden-botanical-precision",
+      "version": 1,
+      "title": "户外园艺：软握柄、精密枢轴与刃面材质对比",
+      "status": "reference-library",
+      "file": "references/recipes/garden-botanical-precision.v1.json",
+      "profile": {
+        "morphologies": [
+          "hinged-cutting-tool"
+        ],
+        "purposes": [
+          "material"
+        ],
+        "styles": [
+          "botanical-precision"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "户外园艺"
+        ]
+      },
+      "sha256": "7a8323400047bdf021bfe44556f92c57d97da05003b8a8eab404b26e6039b316"
+    },
+    {
+      "id": "kitchen-fresh-kinetic",
+      "version": 1,
+      "title": "厨房厨具：按压触点、旋转轴和透明容器层次",
+      "status": "reference-library",
+      "file": "references/recipes/kitchen-fresh-kinetic.v1.json",
+      "profile": {
+        "morphologies": [
+          "transparent-bowl-pump"
+        ],
+        "purposes": [
+          "operation"
+        ],
+        "styles": [
+          "fresh-kinetic"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "厨房厨具"
+        ]
+      },
+      "sha256": "55609244076bf39015b298870174f6bbf15a10a69418713467f71246b6830977"
+    },
+    {
+      "id": "pet-gentle-fluid",
+      "version": 1,
+      "title": "宠物用品：花形水口、真实水线和柔和流动",
+      "status": "reference-library",
+      "file": "references/recipes/pet-gentle-fluid.v1.json",
+      "profile": {
+        "morphologies": [
+          "bowl-fountain"
+        ],
+        "purposes": [
+          "feature"
+        ],
+        "styles": [
+          "gentle-fluid"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "宠物用品"
+        ]
+      },
+      "sha256": "0a3c29a1a0feda9d0883064d5ae1ea9e8ddb2b7906ebebb88cce5255e36e2fcf"
+    },
+    {
+      "id": "sports-grounded-movement",
+      "version": 1,
+      "title": "运动健身：卷曲到铺开的连续柔性材质动作",
+      "status": "reference-library",
+      "file": "references/recipes/sports-grounded-movement.v1.json",
+      "profile": {
+        "morphologies": [
+          "flexible-sheet"
+        ],
+        "purposes": [
+          "material"
+        ],
+        "styles": [
+          "grounded-movement"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "运动健身"
+        ]
+      },
+      "sha256": "184a42d6657a7c6b320fb47019b761803ddd7b89499c59d670cdcc4f2eb36e43"
+    },
+    {
+      "id": "steamer-tactile",
+      "version": 1,
+      "title": "手持接触家电：衣料雕塑与软硬触感",
+      "status": "user-style-approved",
+      "file": "references/recipes/steamer-tactile.v1.json",
+      "profile": {
+        "morphologies": [
+          "handheld-contact-appliance"
+        ],
+        "purposes": [
+          "hero",
+          "feature",
+          "material",
+          "operation",
+          "use-scene"
+        ],
+        "styles": [
+          "tactile-editorial"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "garment-care",
+          "small-appliance"
+        ]
+      },
+      "sha256": "4dd557fd798bef81d90fc054fe10b5d7a92a4bc11f37b3cde6620a61e2a2115e"
+    },
+    {
+      "id": "tools-industrial-axis",
+      "version": 1,
+      "title": "工具家装：转轴与工业材质的斜向力量",
+      "status": "reference-library",
+      "file": "references/recipes/tools-industrial-axis.v1.json",
+      "profile": {
+        "morphologies": [
+          "rigid-rotary-tool"
+        ],
+        "purposes": [
+          "campaign"
+        ],
+        "styles": [
+          "industrial-axis"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "工具家装"
+        ]
+      },
+      "sha256": "0fa0ebe23520aa269453286efd264f08e09b7d1205b133e04b709c614b415388"
+    },
+    {
+      "id": "toys-playful-geometric",
+      "version": 1,
+      "title": "玩具母婴：环形递减尺度与单手拿取的互动",
+      "status": "reference-library",
+      "file": "references/recipes/toys-playful-geometric.v1.json",
+      "profile": {
+        "morphologies": [
+          "stacked-rings"
+        ],
+        "purposes": [
+          "operation"
+        ],
+        "styles": [
+          "playful-geometric"
+        ],
+        "routes": [
+          "ai-reference-guided"
+        ],
+        "categories": [
+          "玩具母婴"
+        ]
+      },
+      "sha256": "0688c674bab5d342414cb0d976a600ef4947c0f4ee96d4e79b7d0189077af0ad"
+    }
+  ]
+}

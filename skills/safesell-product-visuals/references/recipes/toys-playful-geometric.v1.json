@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "id": "toys-playful-geometric",
+  "version": 1,
+  "title": "玩具母婴：环形递减尺度与单手拿取的互动",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "stacked-rings"
+    ],
+    "purposes": [
+      "operation"
+    ],
+    "styles": [
+      "playful-geometric"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "玩具母婴"
+    ]
+  },
+  "transfer": [
+    "可数零件与实际动作位置锁定",
+    "彩色环以递减尺度组织字物层次"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "operation",
+      "actions": [
+        "lift-ring"
+      ],
+      "intent": "环形递减尺度与单手拿取的互动",
+      "prompt_template": "{current_counted_toy} 锁定数量、颜色顺序和底座；单手从 {verified_axis} 拿取 {top_piece}，其余零件保留来源关系。{headline} 后层被组件遮挡，副字沿动作轴，避免新增环/浮空失接触和教育疗效宣传。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "single-sku-scope"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "single-sku-scope",
+      "observed": "One actual SKU and one image purpose reviewed in this round. No cross-product precision evidence.",
+      "repair": "Recheck source and independent-review next SKU; do not inherit brand, color, numeric claims or geometry.",
+      "resolution": "scope-limited; not a visual failure"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/toys-playful-geometric/v1/anchor-0.png",
+      "sha256": "d76d0b0e2f49118ae6e75b38e625ba6a74d8b0949474ff61f7a67d8b5f99dcd1",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/toys-playful-geometric/v1/anchor-1.jpg",
+      "sha256": "8c902d169ac61e9c73d5b473711cce0d704daccebe65320c388e24722d824ecf",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "405352430"
+    ],
+    "source": "https://www.walmart.com/ip/405352430",
+    "limits": [
+      "Supplementary current-SKU retailer image verifies rounded peg top and full ring/base configuration",
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 1,
+    "revision_calls": 0,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

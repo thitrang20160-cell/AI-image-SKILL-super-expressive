@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "id": "food-crisp-pop",
+  "version": 1,
+  "title": "食品饮料：弧形薯片、脆薄边缘与包装红的节奏",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "packaged-food-cylinder"
+    ],
+    "purposes": [
+      "campaign"
+    ],
+    "styles": [
+      "crisp-pop"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "食品饮料"
+    ]
+  },
+  "transfer": [
+    "食品脆薄边缘成为材质主次",
+    "包装与少量可辨食物形成递进层次"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "campaign",
+      "actions": [
+        "display"
+      ],
+      "intent": "弧形薯片、脆薄边缘与包装红的节奏",
+      "prompt_template": "{current_food_pack} 与少量 {verified_food_shape} 近景组合，{headline} 在后层由包装/食物遮挡；副字顺包装主轴。包装规格照当前来源，不制造健康、营养或销量数据。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "copy_and_claims"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "copy_and_claims",
+      "observed": "THE ORIGINAL STACK 和包装实字可读，但背景标题只能确认 CR…CH，中间 U/N 被圆筒完全或大幅遮挡，无法核实完整拼写。",
+      "repair": "减少圆筒对标题中段的遮挡，让 U、N 各保留足够可识别轮廓，同时保留大字后层关系和当前包装。",
+      "resolution": "later reviewed pass; see bound records",
+      "review": "D:\\CODEX\\saixing-erp-ui-demo\\output\\imagegen\\category-regression-v1\\11-food\\review-v1.json"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/food-crisp-pop/v1/anchor-0.png",
+      "sha256": "7c6a3f203d7723383a88cf5112d8c7ff4901e2cb5ece96656f8e31227f2b5fc8",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/food-crisp-pop/v1/anchor-1.jpg",
+      "sha256": "bccffa8a2024dd37d57141995e2aef7f362ef4b8dd33d2a837194243dc771c59",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "47217461"
+    ],
+    "source": "https://www.walmart.com/ip/47217461",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 2,
+    "revision_calls": 1,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

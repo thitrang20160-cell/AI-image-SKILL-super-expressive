@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "id": "cable-spatial",
+  "version": 1,
+  "title": "柔性线材：空间文字、作用点与弯曲材质",
+  "status": "user-style-approved",
+  "profile": {
+    "morphologies": [
+      "flexible-linear"
+    ],
+    "purposes": [
+      "hero",
+      "feature",
+      "material",
+      "operation",
+      "use-scene"
+    ],
+    "styles": [
+      "technical-studio"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "electronics"
+    ]
+  },
+  "transfer": [
+    "近大远小与连续主体建立纵深，主体和标题有明确前后关系",
+    "作用点的短参数随功能轴线，主字、局部说明和次要说明有尺度差",
+    "材质图以合理回弯为第一事件，接头退为次要身份线索",
+    "短局部图形仅在真实连接/操作位置演绎动态；无触点的图关闭效果"
+  ],
+  "forbidden_inheritance": [
+    "商品品牌和 Logo",
+    "USB 接口类型、端子阵列和壳体比例",
+    "480 Mbps、6 FT、功率及任何测试次数",
+    "未知内部线芯",
+    "蓝光和固定 S 形摆位"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "hero",
+      "actions": [
+        "display"
+      ],
+      "intent": "前景身份线索与后景连续主体建立体积",
+      "prompt_template": "以 {current_product} 为第一视觉，{identity_locks} 控制形状。前景放大 {recognition_part}，后景用连续主体建立纵深；{headline} 参与中层但不挡关键身份。{current_palette} 与 {observed_materials} 按当前原图决定。",
+      "asset_ids": [
+        "spatial-anchor"
+      ],
+      "failure_tags": [
+        "proportion-drift",
+        "flat-title"
+      ]
+    },
+    {
+      "purpose": "feature",
+      "actions": [
+        "insert"
+      ],
+      "intent": "功能位置决定文字和局部动势",
+      "prompt_template": "让 {current_interaction} 在可见真实接触位置成立。主字 {headline} 处于后层并与前景物体交汇；{verified_local_copy} 靠 {functional_anchor}，方向随 {interaction_axis}。局部效果从触点短距离收束，保留接口可读性。",
+      "asset_ids": [
+        "spatial-anchor"
+      ],
+      "failure_tags": [
+        "wrong-contact",
+        "unverified-claim"
+      ]
+    },
+    {
+      "purpose": "material",
+      "actions": [
+        "bend"
+      ],
+      "intent": "回弯与纤维张力为主，硬件为辅",
+      "prompt_template": "{current_flexible_material} 的合理连续回弯占第一视觉，{identity_part} 为次要线索。原图 {texture_reference} 控制纹理相对线径的尺度；近景放大曲率而不把细纤维变成粗绳。{headline} 落中后层，{material_copy} 沿外弧；只有真实资料支持才揭示内部。",
+      "asset_ids": [
+        "material-anchor"
+      ],
+      "failure_tags": [
+        "oversized-weave",
+        "invented-cutaway"
+      ]
+    },
+    {
+      "purpose": "operation",
+      "actions": [
+        "snap"
+      ],
+      "intent": "手只参与实际扣合，结果清楚",
+      "prompt_template": "用一只手在 {real_closure} 执行 {current_operation}，明确动作和 {visible_result}，保留附件数量、连接和尺寸关系。{local_copy} 随扣合部件方向，背景和手退为配角，不增造机构。",
+      "asset_ids": [
+        "spatial-anchor"
+      ],
+      "failure_tags": [
+        "invented-mechanism",
+        "display-without-action"
+      ]
+    },
+    {
+      "purpose": "use-scene",
+      "actions": [
+        "span"
+      ],
+      "intent": "两个真实端点与连续主体让使用价值可见",
+      "prompt_template": "{endpoint_a} 与 {endpoint_b} 由当前商品连续连接，商品清晰而环境克制。透视表现使用距离，不当作长度量测。{verified_copy} 随跨越方向，{headline} 与前景交汇，必要手部操作服务于结果。",
+      "asset_ids": [
+        "spatial-anchor"
+      ],
+      "failure_tags": [
+        "disconnected-endpoint",
+        "length-as-decoration"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "oversized-weave",
+      "observed": "V5 最前景仍有大格纹，不能视为真实微观材质",
+      "repair": "源图比对相对线径的编织尺度；同问题两次仍失败改已有角度/固定商品层",
+      "resolution": "partial"
+    },
+    {
+      "tag": "flat-title",
+      "observed": "早期标题集中空白区，物体和文字互不作用",
+      "repair": "先规划语义位置、前后遮挡和局部方向，再生图",
+      "resolution": "style-approved"
+    }
+  ],
+  "assets": [
+    {
+      "id": "spatial-anchor",
+      "file": "assets/approved-spatial-type-v3.png",
+      "role": "style-reference",
+      "sha256": "177ac36c2a134ea2bf675caac174eada1af95744f9cfd10a24ffe1b4ae79ec67"
+    },
+    {
+      "id": "material-anchor",
+      "file": "assets/recipes/cable/material-v5.png",
+      "role": "style-reference-with-material-limit",
+      "sha256": "83f0458fc5ecb1a67649aff3faf0fe665a947cff110bde63e9098601f631a8a6"
+    }
+  ],
+  "approval": {
+    "date": "2026-10-08",
+    "kind": "user-style-feedback",
+    "statements": [
+      "到位，形成SKILL 要能复用到不同类目 不同类型图片。",
+      "不错的，试试其他类目"
+    ],
+    "scope": "空间图文、材质动作与商品主次；不覆盖精确几何、编织尺度或性能",
+    "independent_ai_review": false,
+    "private_review_evidence_included": false
+  },
+  "calibration": {
+    "tested_skus": [
+      "3742125683"
+    ],
+    "generation_tool": "built-in image_gen",
+    "source": "https://www.walmart.com/ip/3742125683",
+    "route": "ai-reference-guided",
+    "limits": [
+      "单一商品验证",
+      "微观纹理和端子尚未核实",
+      "烘焙文字",
+      "不等于真实模型或平台主图"
+    ]
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  },
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output."
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "id": "steamer-tactile",
+  "version": 1,
+  "title": "手持接触家电：衣料雕塑与软硬触感",
+  "status": "user-style-approved",
+  "profile": {
+    "morphologies": [
+      "handheld-contact-appliance"
+    ],
+    "purposes": [
+      "hero",
+      "feature",
+      "material",
+      "operation",
+      "use-scene"
+    ],
+    "styles": [
+      "tactile-editorial"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "garment-care",
+      "small-appliance"
+    ]
+  },
+  "transfer": [
+    "柔软材料的折线、垂坠、汇聚与硬壳/接触面形成张力",
+    "温润环境与当前商品本色对照，宽柔光配材料掠光，减少无关电光",
+    "有体积的主字进入衣料/商品后层，局部文字顺材料受力或垂坠方向",
+    "编辑感标题与清晰功能字体分工，大小、位置和方向由画面决定",
+    "手只执行必要操作，商品保持第一视觉；动效局限于可信作用点"
+  ],
+  "forbidden_inheritance": [
+    "DR.FLASH 品牌",
+    "6000Pa、3 模式及任何参数",
+    "粉色边框、底座、水箱和按钮图标",
+    "假设其他商品也有吸附或蒸汽",
+    "未测量的除皱/吸力效果",
+    "未知内部流路"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "hero",
+      "actions": [
+        "display"
+      ],
+      "intent": "材料框景突出商品的硬朗形态",
+      "prompt_template": "{current_product} 稳定置于 {real_support}，锁定 {identity_locks}。{scene_material} 用克制的折线和垂坠框景；{headline} 为中后层大字，由商品与材料选择性遮挡，{supporting_copy} 顺折线。环境色 {current_palette} 由商品决定；展示状态不添加工作效果。",
+      "asset_ids": [
+        "hero-anchor"
+      ],
+      "failure_tags": [
+        "fantasy-scene",
+        "flat-title"
+      ]
+    },
+    {
+      "purpose": "feature",
+      "actions": [
+        "gather-contact"
+      ],
+      "intent": "实际作用点与材料汇聚共同表现功能",
+      "prompt_template": "一只手执行 {verified_interaction}，{contact_surface} 与 {scene_material} 接触。材料连续汇聚至实际触点，但不冒充性能测量。{verified_local_copy} 邻近作用点，被前景材料局部遮挡且仍可读；{local_direction_copy} 随汇聚方向。仅有依据时加入局部工作效果。",
+      "asset_ids": [
+        "feature-anchor"
+      ],
+      "failure_tags": [
+        "unverified-claim",
+        "excess-effects"
+      ]
+    },
+    {
+      "purpose": "material",
+      "actions": [
+        "hard-soft-contact"
+      ],
+      "intent": "硬边与软材料接触成为第一视觉事件",
+      "prompt_template": "近景展示 {verified_hard_surface} 与 {soft_material} 的真实连续接触，硬边反射与软材料细纹/折线区分。{texture_reference} 控制相对纹理尺度。{headline} 进入材料后方，{local_copy} 顺受力折线；不生成未知剖面，不以粗织纹或发光替代触感。",
+      "asset_ids": [
+        "material-anchor"
+      ],
+      "failure_tags": [
+        "oversized-weave",
+        "invented-cutaway",
+        "wrong-contact"
+      ]
+    },
+    {
+      "purpose": "operation",
+      "actions": [
+        "press-control"
+      ],
+      "intent": "指尖、真实控制位置与短说明对应",
+      "prompt_template": "指尖在原图确认的 {real_control} 执行 {current_operation}，保留 {actual_icon_family} 的布局和数量。{verified_mode_copy} 用清晰短说明；仅能确认映射时加指引线。{headline} 的规模与前景面板呼应，不生成悬浮新屏幕或额外按钮。",
+      "asset_ids": [
+        "control-anchor",
+        "control-source",
+        "control-failure"
+      ],
+      "failure_tags": [
+        "wrong-mode-mapping",
+        "invented-control"
+      ]
+    },
+    {
+      "purpose": "use-scene",
+      "actions": [
+        "garment-contact"
+      ],
+      "intent": "单手接触、衣料垂坠与局部结果形成层次",
+      "prompt_template": "一只手用当前商品执行 {verified_operation}，{real_working_surface} 接触 {garment}，商品清晰且主导。{headline} 与前景商品局部交汇，{local_copy} 随衣料垂坠；效果仅位于实际作用点，{visible_result} 明确标作广告演绎，不编造前后测试。",
+      "asset_ids": [
+        "use-anchor"
+      ],
+      "failure_tags": [
+        "display-without-action",
+        "flat-title",
+        "unverified-before-after"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "wrong-mode-mapping",
+      "observed": "初版说明线把 Vacuum 指向电源、High Steam 指向风扇",
+      "repair": "重新核对原图；无法逐一准确映射时移除引线，保留准确模式短说明和实际图标",
+      "resolution": "visually-corrected"
+    },
+    {
+      "tag": "flat-title",
+      "observed": "初版 HAND 在空白区未与主体交汇",
+      "repair": "沿衣料垂坠重新分配文字层，前景商品遮挡部分标题；定向编辑后仍核对全图位置",
+      "resolution": "style-approved; edit also shifted product"
+    },
+    {
+      "tag": "excess-effects",
+      "observed": "吸附图实际出现三支箭头，提示词要求最多两支",
+      "repair": "审核实际输出的效果数量与主次，不由提示词宣称已执行",
+      "resolution": "recorded; advertising direction accepted"
+    }
+  ],
+  "assets": [
+    {
+      "id": "hero-anchor",
+      "file": "assets/recipes/steamer/01-hero.png",
+      "role": "style-reference",
+      "sha256": "57d0a0881c52235af54f5470c528b617b849c83bc9bd2e6d464689da01414470"
+    },
+    {
+      "id": "feature-anchor",
+      "file": "assets/recipes/steamer/02-feature.png",
+      "role": "style-reference",
+      "sha256": "3099fa41d45a66035ef8664f1f35428c9d6e6de94bd6093c41c182086924cc79"
+    },
+    {
+      "id": "material-anchor",
+      "file": "assets/recipes/steamer/03-material.png",
+      "role": "style-reference",
+      "sha256": "0cabeaaeb57682fb499916199551553f30a9444d5e182c70902fc309d92975b4"
+    },
+    {
+      "id": "control-anchor",
+      "file": "assets/recipes/steamer/04-control.png",
+      "role": "style-reference",
+      "sha256": "e27bee27131967a89ca8973524be9e606e37ceb9c981753c0e3b49b7021fd9e8"
+    },
+    {
+      "id": "use-anchor",
+      "file": "assets/recipes/steamer/05-use.png",
+      "role": "style-reference",
+      "sha256": "ddd8495967ff643515c57ec20c48c1c6363ae695e59b5363daae6567affac88f"
+    },
+    {
+      "id": "control-failure",
+      "file": "assets/recipes/steamer/04-control-failure.png",
+      "role": "failure-example; never positive style anchor",
+      "sha256": "ca9dbc8c900c920f2a1ab566c1b0ee0e4ceb2de6a64eb1a99113b80285d892f7"
+    },
+    {
+      "id": "control-source",
+      "file": "assets/recipes/steamer/source-control.jpg",
+      "role": "calibration-product-identity; not current SKU",
+      "sha256": "77da5045063876b381fbcd61d836e66a8939ffbbbc0e7f75e11bb987c8d59579"
+    },
+    {
+      "id": "product-source",
+      "file": "assets/recipes/steamer/source-hero.jpg",
+      "role": "calibration-product-identity; not current SKU",
+      "sha256": "bf64fb93622cf62f9a957b0b92d5f31fd18a57e6539dde6963363ba4531e080c"
+    }
+  ],
+  "approval": {
+    "date": "2026-10-08",
+    "kind": "user-style-feedback",
+    "statement": "做的很好 优化skill",
+    "scope": "本套的类目设计语言、商品主次、衣料接触与空间文字；不覆盖工程结构或实测性能",
+    "independent_ai_review": false,
+    "private_review_evidence_included": false
+  },
+  "calibration": {
+    "tested_skus": [
+      "20441416067"
+    ],
+    "generation_tool": "built-in image_gen",
+    "successful_calls": 7,
+    "failed_calls": 0,
+    "cost_receipt": null,
+    "source": "https://www.walmart.com/ip/20441416067",
+    "route": "ai-reference-guided",
+    "limits": [
+      "只验证一个 SKU",
+      "参考引导重绘，不是 CAD",
+      "精确拼缝、热板孔位和控制传感器未核实",
+      "材质图衣料偏厚，不自动适用丝绸",
+      "吸附/除皱图为广告演绎",
+      "烘焙文字，不是平台主图"
+    ]
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  },
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output."
+}

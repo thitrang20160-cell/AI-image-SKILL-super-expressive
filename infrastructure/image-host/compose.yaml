@@ -1,0 +1,15 @@
+services:
+  image-host:
+    build:
+      context: ../..
+      dockerfile: infrastructure/image-host/Dockerfile
+    environment:
+      UPLOAD_TOKEN: ${UPLOAD_TOKEN:?Set a private upload token}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:?Set your HTTPS public image host}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - images:/data/images
+    restart: unless-stopped
+volumes:
+  images:

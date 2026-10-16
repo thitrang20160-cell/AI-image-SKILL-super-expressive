@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "tools-industrial-axis",
+  "version": 1,
+  "title": "工具家装：转轴与工业材质的斜向力量",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "rigid-rotary-tool"
+    ],
+    "purposes": [
+      "campaign"
+    ],
+    "styles": [
+      "industrial-axis"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "工具家装"
+    ]
+  },
+  "transfer": [
+    "旋转主轴穿过后层字",
+    "握柄橡胶与机身塑胶金属分离"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "campaign",
+      "actions": [
+        "display"
+      ],
+      "intent": "转轴与工业材质的斜向力量",
+      "prompt_template": "{current_rotary_tool} 保持当前裸机/套装状态，以 {visible_axis} 贯穿后层 {headline}；副字沿主轴，外壳细纹和金属边界精确，不加未含电池或未知工作效果。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "single-sku-scope"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "single-sku-scope",
+      "observed": "One actual SKU and one image purpose reviewed in this round. No cross-product precision evidence.",
+      "repair": "Recheck source and independent-review next SKU; do not inherit brand, color, numeric claims or geometry.",
+      "resolution": "scope-limited; not a visual failure"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/tools-industrial-axis/v1/anchor-0.png",
+      "sha256": "971a6222be4daeaab3b6231b677c5bcb725d46398ebeb8d3a5157b5605f2aebe",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/tools-industrial-axis/v1/anchor-1.jpg",
+      "sha256": "5d1c7de3ab495b09018c8ed0a5d8f1de8eba976ce6e34c77d7a60bb32854da6b",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "251417300"
+    ],
+    "source": "https://www.walmart.com/ip/251417300",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 1,
+    "revision_calls": 0,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

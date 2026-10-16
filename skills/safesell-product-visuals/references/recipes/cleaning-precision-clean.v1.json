@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "id": "cleaning-precision-clean",
+  "version": 1,
+  "title": "清洁家电：细长硬壳与精确秩序的张力",
+  "status": "reference-library",
+  "profile": {
+    "morphologies": [
+      "handheld-contact-appliance"
+    ],
+    "purposes": [
+      "hero"
+    ],
+    "styles": [
+      "precision-clean"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "清洁家电"
+    ]
+  },
+  "transfer": [
+    "细长主轴决定副字方向",
+    "充电座实接触与局部细纹保持商品身份"
+  ],
+  "forbidden_inheritance": [
+    "source SKU identity, brand, variant, dimensions and claims",
+    "unverified hidden construction",
+    "original category palette or action when incompatible"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "hero",
+      "actions": [
+        "display"
+      ],
+      "intent": "细长硬壳与精确秩序的张力",
+      "prompt_template": "{current_product} 保持来源中可见的 {verified_resting_configuration}，主轴贯穿后层 {headline}；{local_copy} 顺机身长轴，细纹和金属/塑胶分离，不补未确认工作附件或吸力演绎。",
+      "asset_ids": [
+        "approved-anchor",
+        "identity-calibration"
+      ],
+      "failure_tags": [
+        "spatial_type",
+        "product_identity"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "spatial_type",
+      "observed": "CLEAN 位于机身后层，但副文案向右下倾斜，而机身长轴向右上倾斜，未按 brief 沿机身轴线排布。",
+      "repair": "将 READY WHEN YOU ARE 的整行文字旋转为与机身长轴平行，并保持在机身右侧留白；保留商品结构、充电座配置和 CLEAN 后层遮挡。",
+      "resolution": "later reviewed pass; see bound records",
+      "review": "D:\\CODEX\\saixing-erp-ui-demo\\output\\imagegen\\category-regression-v1\\03-cleaning\\review-v1.json"
+    },
+    {
+      "tag": "product_identity",
+      "observed": "v2 将原图右侧高立工具附件截短，原本高于 Shark 标签的上段及圆形侧部细节消失，不能由镜头变化解释。",
+      "repair": "恢复原图右侧高立工具附件的完整上段和圆形侧部细节，保留已修正的副文案轴线及主体、底座结构。",
+      "resolution": "later reviewed pass; see bound records",
+      "review": "D:\\CODEX\\saixing-erp-ui-demo\\output\\imagegen\\category-regression-v1\\03-cleaning\\review-v2.json"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/recipes/cleaning-precision-clean/v1/anchor-0.png",
+      "sha256": "ebc0df7aafdc3574856685ba046918ae0e25a3e274a0eb96cf46f160959ea74c",
+      "role": "style-reference",
+      "id": "approved-anchor"
+    },
+    {
+      "file": "assets/recipes/cleaning-precision-clean/v1/anchor-1.jpg",
+      "sha256": "5ca063e4285cfe365f4a43b83e6b199b5eb68e446a68b056104f9f42e7716db8",
+      "role": "calibration-product-identity; not current SKU",
+      "id": "identity-calibration"
+    }
+  ],
+  "calibration": {
+    "tested_skus": [
+      "2182471405"
+    ],
+    "source": "https://www.walmart.com/ip/2182471405",
+    "limits": [
+      "One SKU and one advertising image type; not cross-product validated",
+      "source-guided visual rendering, not CAD or hidden-engineering verification",
+      "baked raster text; not marketplace primary-image compliance approval"
+    ],
+    "generation_calls": 3,
+    "revision_calls": 2,
+    "tokens": null,
+    "cost_receipt": null
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output.",
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  }
+}

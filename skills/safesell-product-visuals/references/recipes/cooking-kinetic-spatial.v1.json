@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "id": "cooking-kinetic-spatial",
+  "version": 1,
+  "title": "烹饪场景：动作弧线、近景冲出与空间文字",
+  "status": "user-style-approved",
+  "profile": {
+    "morphologies": [
+      "countertop-coil-hotplate"
+    ],
+    "purposes": [
+      "use-scene",
+      "campaign"
+    ],
+    "styles": [
+      "fresh-kinetic-spatial"
+    ],
+    "routes": [
+      "ai-reference-guided"
+    ],
+    "categories": [
+      "厨房厨具",
+      "small-appliance"
+    ]
+  },
+  "applicability": {
+    "style_scope": "Action-driven depth and spatial typography only. Category adaptations in kinetic-scene-and-type.md are proposals, not validated SKU scopes.",
+    "exclude_purposes": [
+      "platform-main",
+      "main-use",
+      "dimensions",
+      "installation",
+      "internal-structure"
+    ]
+  },
+  "decision_reference": "references/kinetic-scene-and-type.md",
+  "transfer": [
+    "从施力者、实际触点和轨迹建立一个可读事件，再安排镜头与文字",
+    "少量近镜元素裁切形成扑面纵深，中景保留因果，商品身份锚点清晰可辨",
+    "相机滚转保持共同透视、支撑和重力；不是单独把产品斜放或悬空",
+    "主张词置后层并局部遮挡；动作短语随工具轴；身份说明沿产品边缘或承载平面"
+  ],
+  "forbidden_inheritance": [
+    "Elite Gourmet 品牌、盘管、红灯与 OFF/HI 旋钮等旧 SKU 身份",
+    "FLAVOR、STIR UP、SINGLE BURNER 文案及固定橙灰配色",
+    "自动食物喷射、温度、功率、加热速度或未经核实的测试效果",
+    "给所有类目强加食材飞跃、汤汁飞溅或固定下部摆位",
+    "把排版 pass 或用户审美认可当作整图准确性通过"
+  ],
+  "purpose_patterns": [
+    {
+      "purpose": "use-scene",
+      "actions": [
+        "spoon-sweep"
+      ],
+      "intent": "商品使用的一个动作形成前景事件，同时保留接触与商品身份",
+      "prompt_template": "当前 {current_product} 由 {identity_locks} 控制身份。{actor} 在 {verified_contact} 执行 {supported_action}，{foreground_event} 沿 {causal_trajectory} 接近镜头；中景保留实际接触，{identity_anchor_position} 的商品连续可辨。相机 {camera_roll}，主体、承托面与背景共享透视与重力。{optional_copy} 随动作/产品轴布置，不增加无依据性能。",
+      "asset_ids": [
+        "motion-anchor",
+        "type-anchor"
+      ],
+      "failure_tags": [
+        "pan-support-unknown",
+        "common-camera-unknown",
+        "prop-dominance",
+        "random-copy-axis"
+      ]
+    },
+    {
+      "purpose": "campaign",
+      "actions": [
+        "spoon-sweep"
+      ],
+      "intent": "动作、字物遮挡和方向分工共同构成商业张力",
+      "prompt_template": "以 {current_product} 为可识别主体，在 {supported_action} 的可信轨迹中构成近中远层。大字 {verified_headline} 在后层被 {specific_foreground_object} 局部穿过，每个字母仍可辨；较小 {action_copy} 靠 {action_anchor} 并沿 {action_axis}；{identity_copy} 靠商品、沿 {product_edge_or_plane}。配色与材质按 {current_visual_language} 决定，关键部件与接触无遮挡；仅有短距离有因果的运动效果。",
+      "asset_ids": [
+        "type-anchor",
+        "motion-anchor"
+      ],
+      "failure_tags": [
+        "pan-support-unknown",
+        "common-camera-unknown",
+        "prop-dominance",
+        "random-copy-axis"
+      ]
+    }
+  ],
+  "failure_notes": [
+    {
+      "tag": "pan-support-unknown",
+      "observed": "V2/V3 锅底到盘管的承托点不可确认，整体仍 revise。",
+      "repair": "新图让锅底支撑可见，保持安全、可信操作；缺依据时降低动作或改现有角度，不能靠遮挡取通过。",
+      "resolution": "unresolved; not full-image validation"
+    },
+    {
+      "tag": "common-camera-unknown",
+      "observed": "V2/V3 主体与背景共同机位仍有疑点。",
+      "repair": "统一产品、锅、台面与背景的相机滚转和消失方向，重新审核最新文件。",
+      "resolution": "unresolved"
+    },
+    {
+      "tag": "prop-dominance",
+      "observed": "强前景动作可能使被售产品退为配角；本次用户认可未解除后续主体检查。",
+      "repair": "缩略图看清商品并保留足够尺度、品牌/控制/轮廓；减少飞散物。",
+      "resolution": "reuse constraint"
+    },
+    {
+      "tag": "random-copy-axis",
+      "observed": "普通上标题/下卖点没有进入动作与空间。",
+      "repair": "分别绑定后层主张、动作轴和产品边缘；每个方向有依据、逐字可辨。",
+      "resolution": "layout passed in V3"
+    }
+  ],
+  "assets": [
+    {
+      "id": "motion-anchor",
+      "file": "assets/recipes/cooking-kinetic-spatial/v1/motion-anchor.png",
+      "role": "style-reference-with-unresolved-contact-and-camera",
+      "sha256": "6e703a71d31e4af65b102de90d2834ac25529887042d7596c8858849f4bcf4da"
+    },
+    {
+      "id": "type-anchor",
+      "file": "assets/recipes/cooking-kinetic-spatial/v1/type-anchor.png",
+      "role": "style-reference-with-unresolved-contact-and-camera",
+      "sha256": "dbdbfc0da8be232f1ac11639cfcf15b7cd0431d5a5242d7922c586c8d1ea4062"
+    },
+    {
+      "id": "source-calibration",
+      "file": "assets/recipes/cooking-kinetic-spatial/v1/source-identity.jpg",
+      "role": "historical-sku-comparison-only-not-identity-for-new-product",
+      "sha256": "2341cecf3ac2b72b5e8fd1250d04c0e6a368326ec89126983557e1157b540220"
+    }
+  ],
+  "approval": {
+    "date": "2026-10-09",
+    "kind": "user-style-feedback",
+    "statements": [
+      "画面对味，再配上文字  文字和画面有交互，随着画面走",
+      "可以了 融入skill"
+    ],
+    "scope": "动作、空间层次和文字交互；不是商品承托、工程准确性或检测交付通过",
+    "independent_ai_review": true,
+    "independent_review_scope": "Historical private review not distributed; no public execution receipt.",
+    "private_review_evidence_included": false
+  },
+  "calibration": {
+    "tested_skus": [
+      "AMZ-B0H2C6NK3Y"
+    ],
+    "source": "https://www.amazon.com/dp/B0H2C6NK3Y",
+    "generation_tool": "built-in image_gen",
+    "route": "ai-reference-guided",
+    "generation_calls": 2,
+    "count_scope": "V2 dynamic scene plus V3 spatial typography only; excludes prior job outputs",
+    "input_tokens": null,
+    "output_tokens": null,
+    "cost_receipt": null,
+    "limits": [
+      "one SKU, style only",
+      "pan-to-coil contact unknown",
+      "common camera unknown",
+      "baked raster text",
+      "detector coverage incomplete; working draft, not final delivery"
+    ]
+  },
+  "audit_support": [],
+  "audited_purposes": [],
+  "public_export": {
+    "status": "reference-only",
+    "private_review_transcripts_included": false,
+    "original_images_byte_identical": true,
+    "note": "Private execution evidence is not distributed. This is a starting reference, not a current-SKU accuracy or independent-review certificate."
+  },
+  "admission_note": "Public reference export; current source fidelity, style and copy must be reviewed for every output."
+}

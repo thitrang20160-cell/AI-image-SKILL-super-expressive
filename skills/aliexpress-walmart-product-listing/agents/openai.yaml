@@ -1,0 +1,4 @@
+interface:
+  display_name: "速卖通产品精铺沃尔玛skill"
+  short_description: "先筛需求流量与竞品利润，再制作listing、套图并审核上架"
+  default_prompt: "使用 $aliexpress-walmart-product-listing 完成速卖通产品精铺沃尔玛流程，沿用当前任务范围、店铺和已确认约束。"
