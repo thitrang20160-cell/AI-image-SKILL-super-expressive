@@ -17,7 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def run(args,cwd,env):
-    result=subprocess.run([sys.executable,'-X','utf8','-B',*map(str,args)],cwd=cwd,env=env,text=True,capture_output=True,timeout=240)
+    result=subprocess.run([sys.executable,'-X','utf8','-B',*map(str,args)],cwd=cwd,env=env,text=True,encoding='utf-8',capture_output=True,timeout=240)
     if result.returncode:
         print(result.stdout);print(result.stderr,file=sys.stderr)
         raise RuntimeError('Offline command failed: '+Path(str(args[0])).name)
@@ -74,6 +74,7 @@ def main():
     outputs['pricing']=run([listing/'test_pricing_curve.py','--workdir',runroot/'pricing'],ROOT,env)
     outputs['selection']=run([listing/'test_evaluate_selection.py','--workdir',runroot/'selection'],ROOT,env)
     outputs['image_host_and_install']=run([ROOT/'tests/test_image_host.py'],ROOT,env)
+    outputs['non_utf8_parent']=run([ROOT/'tests/test_subprocess_encoding.py'],ROOT,env)
     outputs['installation']=run([ROOT/'scripts/install_skills.py','--target',runroot/'relocated'/'skills'],ROOT,env)
     installed=runroot/'relocated/skills'
     outputs['relocated_recipes']=run([installed/'safesell-product-visuals/scripts/recipe_library.py','validate'],runroot,env)
