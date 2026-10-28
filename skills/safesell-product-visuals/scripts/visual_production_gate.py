@@ -62,7 +62,8 @@ def _request(path, tracked):
     brief_path = verify_ref(request.get('brief'), base, tracked)
     brief = load_object(brief_path, tracked)
     require(brief.get('sku') == request['sku'] and brief.get('image_type') == request['purpose'], 'request_brief_scope_mismatch')
-    require(type(brief.get('visual_production', {}).get('version')) is int and brief['visual_production']['version'] == 1, 'production_contract_version_missing')
+    production_version = brief.get('visual_production', {}).get('version')
+    require(type(production_version) is int and production_version in (1, 2), 'production_contract_version_missing')
     require(type(brief.get('review_set')) is bool, 'review_set_must_be_explicit')
     require(brief.get('realism', {}).get('mode') in ('photographic', 'grounded-advertising'), 'realism_mode_missing')
     for module in ('spatial_type', 'effects', 'material_expression'):
@@ -78,6 +79,7 @@ def _request(path, tracked):
     require(type(args.get('transparent_background')) is bool, 'background_policy_missing')
     attached = args.get('referenced_image_paths')
     require(isinstance(attached, list) and attached, 'local_reference_paths_missing')
+    require(len(attached) <= 5, 'reference_images_exceed_current_tool_limit_five')
     # Keep exact tool_args paths absolute: the tool has no request-file base directory.
     require(all(isinstance(p, str) and Path(p).is_absolute() for p in attached), 'tool_reference_paths_must_be_absolute')
     attached_paths = {resolve_file(p, base) for p in attached}
@@ -116,6 +118,20 @@ def _request(path, tracked):
     if request['purpose'] == 'material':
         material = brief['material_expression']
         require(material['enabled'] is True and material.get('action') and material.get('visual_result'), 'material_event_missing')
+    if production_version == 2 and request['purpose'] in ('feature', 'material', 'scene'):
+        tension = brief.get('non_text_visual_tension')
+        require(isinstance(tension, dict), 'non_text_visual_plan_missing')
+        event = tension.get('event')
+        require(isinstance(event, dict), 'non_text_visual_event_missing')
+        for field in ('product_part', 'physical_action_or_relation', 'visible_result'):
+            require(isinstance(event.get(field), str) and event[field].strip(), 'non_text_visual_event_missing:' + field)
+        for field in ('camera_choice', 'light_or_material_choice', 'first_read_without_words'):
+            require(isinstance(tension.get(field), str) and tension[field].strip(), 'non_text_visual_plan_missing:' + field)
+        levers = tension.get('visual_levers')
+        allowed = {'viewpoint', 'action', 'scale', 'material', 'light', 'depth', 'contact', 'geometry'}
+        require(isinstance(levers, list) and len(set(levers)) >= 2 and set(levers) <= allowed,
+                'at_least_two_non_text_visual_levers_required')
+        require(tension.get('typography_role') in ('none', 'supporting'), 'typography_cannot_be_primary_tension')
     return request, brief, style_paths
 
 
@@ -156,6 +172,13 @@ def evaluate(request_path, review_path=None, expected_output=None, expected_sku=
             checks = review.get('checks')
             require(isinstance(checks, dict), 'visual_checks_missing')
             validate_visual_checks(brief, checks)
+            if brief['visual_production']['version'] == 2 and request['purpose'] in ('feature', 'material', 'scene'):
+                visual = review.get('non_text_visual_review')
+                require(isinstance(visual, dict) and visual.get('status') == 'pass', 'non_text_visual_review_not_passed')
+                for field in ('product_first_read', 'visible_cause', 'visible_result',
+                              'eye_path_without_words', 'why_typography_is_secondary'):
+                    require(isinstance(visual.get(field), str) and visual[field].strip(),
+                            'non_text_visual_observation_missing:' + field)
             inspection = review.get('inspection', {})
             require(inspection.get('full_size') is True and inspection.get('thumbnail') is True and isinstance(inspection.get('evidence'), str) and inspection['evidence'].strip(), 'full_size_and_thumbnail_review_missing')
             comparisons = review.get('comparisons', [])
@@ -198,8 +221,8 @@ def main():
     if args.report:
         report = args.report.resolve()
         protected = {Path(ref['file']).resolve() for ref in result['evidence']}
-        if report in protected or report.exists():
-            parser.error('Use a new separate report in your output directory, never overwrite an input or old report')
+        if report.drive.upper() == 'C:' or report in protected or report.exists():
+            parser.error('Use a new separate report on I:, never overwrite an input or old report')
         report.parent.mkdir(parents=True, exist_ok=True)
         with report.open('x', encoding='utf-8') as handle:
             json.dump(result, handle, ensure_ascii=False, indent=2)

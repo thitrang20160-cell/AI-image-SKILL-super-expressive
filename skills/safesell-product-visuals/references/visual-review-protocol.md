@@ -4,6 +4,8 @@
 
 v1.11 新制/返修执行 [稳定视觉生产](stable-visual-production.md)：brief标记 `visual_production.version=1`，审核绑定实际 generation_request，并记录 inspection、comparisons、observed_copy 和 unresolved_defects。`visual_production_gate.py review` 校验这些记录；全尺寸/缩略图、原始锚点对照必须实际执行，不能为脚本通过预填。风格用户认可、制作自查、真实独立审核分别记录，SafeSellAI低风险不代替审美检查。
 
+v1.13 起的新制/返修 feature、material、scene 使用 visual_production.version=2；另查 non_text_tension。观察者忽略画面全部文字，写出产品的第一视觉、可见动作或材料关系、实际结果和眼睛沿哪条商品线索移动。文字一盖住就失去卖点，判 fail 并返修镜位、接触或材料事件。审核另记 non_text_visual_review 的具体观察；脚本的结构校验不能自动认定画面有张力。旧 v1 不追溯补写。
+
 ## 审核角色提示词
 
 将下文用于实际 AI 视觉审核请求。不要给审核员生成器的自评分或“这张已通过”的预设。可用独立审核上下文时使用；只有当前制作角色能自查时，记录 `creator-self-check`，不能声称完成了独立审核。不得为执行本协议默认开子代理或外部 API；沿用实际可用工具和用户授权。

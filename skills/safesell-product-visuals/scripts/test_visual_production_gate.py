@@ -64,6 +64,24 @@ class GateTests(unittest.TestCase):
         if request is not None:save(self.f['request_file'],request)
         if review is not None:save(self.f['review_file'],review)
         return evaluate(self.f['request_file'],self.f['review_file'] if with_review else None)
+    def v2_fixture(self, purpose='feature', slot_role='feature-1'):
+        f=make_fixture(self.f['base']/('v2-'+purpose),purpose=purpose,slot_role=slot_role)
+        f['brief']['visual_production']['version']=2
+        f['brief']['non_text_visual_tension']={
+            'event':{'product_part':'actual zipper','physical_action_or_relation':'hand opens zipper','visible_result':'opening reveals product interior'},
+            'camera_choice':'low close three-quarter view',
+            'light_or_material_choice':'side light reveals folds',
+            'first_read_without_words':'diagonal contact and opened pouch',
+            'visual_levers':['action','geometry','material'],
+            'typography_role':'supporting'}
+        save(f['brief_file'],f['brief']);f['request']['brief']=ref(f['brief_file']);save(f['request_file'],f['request'])
+        f['review']['brief']=ref(f['brief_file']);f['review']['generation_request']=ref(f['request_file'])
+        f['review']['checks']['non_text_tension']={'status':'pass','evidence':'Synthetic fixture only; image judgment unproven.'}
+        f['review']['non_text_visual_review']={'status':'pass','product_first_read':'synthetic green pouch',
+            'visible_cause':'synthetic hand at zipper','visible_result':'synthetic open panel',
+            'eye_path_without_words':'product then zipper then opening','why_typography_is_secondary':'synthetic text is not the mechanism'}
+        save(f['review_file'],f['review'])
+        return f
     def test_valid_input_and_record(self):
         self.assertTrue(self.run_gate(with_review=False)['ok'])
         self.assertTrue(self.run_gate()['ok'])
@@ -86,6 +104,19 @@ class GateTests(unittest.TestCase):
     def test_seed_not_exposed_by_tool(self):
         request=copy.deepcopy(self.f['request']);request['tool_args']['seed']=42
         self.assertFalse(self.run_gate(request=request,with_review=False)['ok'])
+    def test_current_tool_accepts_five_reference_images_but_not_six(self):
+        request=copy.deepcopy(self.f['request'])
+        for index in range(3):
+            extra=self.f['base']/('extra-draft-'+str(index)+'.png')
+            extra.write_bytes(fixture_png())
+            request['inputs'].append(dict(ref(extra),role='draft'))
+            request['tool_args']['referenced_image_paths'].append(str(extra))
+        self.assertTrue(self.run_gate(request=request,with_review=False)['ok'])
+        extra=self.f['base']/'sixth-draft.png';extra.write_bytes(fixture_png())
+        request['inputs'].append(dict(ref(extra),role='draft'))
+        request['tool_args']['referenced_image_paths'].append(str(extra))
+        result=self.run_gate(request=request,with_review=False)
+        self.assertIn('reference_images_exceed_current_tool_limit_five',result['errors'])
     def test_edit_needs_target_and_original_inputs(self):
         request=copy.deepcopy(self.f['request']);request['mode']='edit'
         self.assertFalse(self.run_gate(request=request,with_review=False)['ok'])
@@ -132,6 +163,42 @@ class GateTests(unittest.TestCase):
         material['brief']['material_expression']['enabled']=False;save(material['brief_file'],material['brief'])
         material['request']['brief']=ref(material['brief_file']);save(material['request_file'],material['request'])
         self.assertFalse(evaluate(material['request_file'])['ok'])
+    def test_v2_requires_physical_visual_plan_before_generation(self):
+        f=self.v2_fixture()
+        self.assertTrue(evaluate(f['request_file'])['ok'])
+        cases=[
+            ('no_plan',lambda b:b.pop('non_text_visual_tension')),
+            ('no_result',lambda b:b['non_text_visual_tension']['event'].pop('visible_result')),
+            ('only_type',lambda b:b['non_text_visual_tension'].update({'typography_role':'primary'})),
+            ('one_lever',lambda b:b['non_text_visual_tension'].update({'visual_levers':['action']})),
+        ]
+        original=copy.deepcopy(f['brief'])
+        for label,mutate in cases:
+            with self.subTest(case=label):
+                broken=copy.deepcopy(original);mutate(broken);save(f['brief_file'],broken)
+                request=copy.deepcopy(f['request']);request['brief']=ref(f['brief_file']);save(f['request_file'],request)
+                self.assertFalse(evaluate(f['request_file'])['ok'])
+    def test_v2_requires_observed_visual_without_typography_after_generation(self):
+        f=self.v2_fixture()
+        self.assertTrue(evaluate(f['request_file'],f['review_file'])['ok'])
+        original=copy.deepcopy(f['review'])
+        cases=[
+            ('missing_review',lambda r:r.pop('non_text_visual_review')),
+            ('unknown',lambda r:r['non_text_visual_review'].update({'status':'unknown'})),
+            ('no_eye_path',lambda r:r['non_text_visual_review'].pop('eye_path_without_words')),
+            ('failed_check',lambda r:r['checks']['non_text_tension'].update({'status':'fail'})),
+            ('missing_check',lambda r:r['checks'].pop('non_text_tension')),
+        ]
+        for label,mutate in cases:
+            with self.subTest(case=label):
+                broken=copy.deepcopy(original);mutate(broken);save(f['review_file'],broken)
+                self.assertFalse(evaluate(f['request_file'],f['review_file'])['ok'])
+    def test_v2_material_retains_material_event_and_non_text_tension(self):
+        f=self.v2_fixture('material','material')
+        self.assertTrue(evaluate(f['request_file'],f['review_file'])['ok'])
+        broken=copy.deepcopy(f['review']);broken['checks']['material_tension']['status']='unknown'
+        save(f['review_file'],broken)
+        self.assertFalse(evaluate(f['request_file'],f['review_file'])['ok'])
     def test_platform_main_image_does_not_require_advertising_type(self):
         main=make_fixture(self.f['base']/'master',purpose='master',slot_role='master')
         self.assertTrue(evaluate(main['request_file'],main['review_file'])['ok'])
@@ -175,6 +242,7 @@ class GateTests(unittest.TestCase):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--workdir',type=Path,required=True)
     args=parser.parse_args();base=args.workdir.resolve()
+    if base.drive.upper()=='C:':parser.error('Use an isolated directory on I:')
     base.mkdir(parents=True,exist_ok=True);GateTests.workdir=base
     suite=unittest.defaultTestLoader.loadTestsFromTestCase(GateTests)
     result=unittest.TextTestRunner(verbosity=2).run(suite)

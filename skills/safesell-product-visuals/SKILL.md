@@ -7,6 +7,12 @@ description: Direct and refine SafeSellAI product images with source fidelity, r
 
 主流程和视觉分支在 [AI生图SKILL.md](AI生图SKILL.md)，制作前读取；保留现有外部调用路径。
 
+v1.13 非文字张力：新制/返修的 feature、material、scene 使用 [稳定视觉生产](references/stable-visual-production.md) 的 visual_production.version=2。先设计商品自身的动作、受力、材质、机位和可见结果，至少有两种非文字视觉杠杆；文字只能辅助。成图后实际做“忽略所有字”检查，产品仍能独立讲清主张才通过 non_text_tension。旧 v1 证据不追溯改写。主图和尺寸图仍按各自的清晰/规格职责处理。
+
+v1.12 主图标准：清晰度、高级感、特征展现。制作 `master` / `master-use` 时先读 [主图质量与类目表达](references/main-image-quality.md)，按当前商品选择角度、摆放、包装/套装关系和光线；原尺寸与缩略图都实际检查。主图的表现力服务商品识别，不能把所有类目套成同一斜角、动效或广告版式。
+
+公开仓库、原图下载、校验清单与基础设施安装见 [公开分发与资源复用](references/public-distribution.md)。本机生产配置保留在本机，公开包提供便携模板，不把参考库当当前商品或审核事实。
+
 v1.11：按样张制作、连续批次或返修时，执行 [稳定视觉生产](references/stable-visual-production.md)。记录实际参考图与调用参数，生图前运行 `visual_production_gate.py preflight`，成图实际对照后运行 `review`；缺风格原图、关键项未知或哈希过期不得放行。分图型保持张力，主图/尺寸按用途处理。已有认可无需重复确认，制作自查不冒充独立审核。
 
 新增或返修图片在 `delivery_gate.py` 传入 `--generation-request`；沃尔玛编排同步启用新版批次闸门。脚本检查记录和字节，不代替视觉判断，也不自动接管服务器上传或发布。

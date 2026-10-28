@@ -24,6 +24,8 @@ Codex 可安装到自己的 `~/.codex/skills`；Windows也可指定任意工作�
 
 商品原图负责身份，原始风格锚点负责构图关系。每张保存brief、实际request和review；预检后调用同一份参数，成图按原尺寸与缩略图对照，失败定向返修后重审。
 
+v1.13 对新制和返修的卖点、材质、场景图加入**无字视觉张力**闸门：生成前说明产品局部、实际动作、可见结果、机位和光材设计；成图后忽略全部标题，仍须看出产品作用及视线流向。文字只作辅助。主图与尺寸图保持各自的商品识别和规格职责。旧版审查记录不追溯改写；脚本检查证据完整性，审美仍须实际看图。
+
 ```text
 python skills/safesell-product-visuals/scripts/recipe_library.py list
 python skills/safesell-product-visuals/scripts/visual_production_gate.py preflight --request <request.json>

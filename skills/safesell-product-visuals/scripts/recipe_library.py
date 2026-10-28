@@ -143,8 +143,11 @@ def validate_visual_checks(brief, checks):
         require(type(brief.get("review_set")) is bool, "New realism brief needs explicit boolean review_set")
     needs_physical = realism is not None or "physical_plausibility" in checks
     expected_checks = REQUIRED_PASS | OPTIONAL_CHECKS | ({"physical_plausibility"} if needs_physical else set())
-    if brief.get("visual_production", {}).get("version") == 1 and brief.get("image_type") == "material":
+    production_version = brief.get("visual_production", {}).get("version")
+    if production_version in (1, 2) and brief.get("image_type") == "material":
         expected_checks |= {"material_event", "material_tension"}
+    if production_version == 2 and brief.get("image_type") in {"feature", "material", "scene"}:
+        expected_checks.add("non_text_tension")
     require(set(checks) == expected_checks, "Review needs all applicable explicit checks; new realism briefs require physical_plausibility")
     inactive = {
         "contact_and_operation": brief.get("composition", {}).get("action") in (None, "none", "display"),
